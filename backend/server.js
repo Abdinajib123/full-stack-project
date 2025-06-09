@@ -1,9 +1,12 @@
-import express from "express"
- 
+import express from 'express'
+import connectdb from './config/dbconfig.js';
 const app = express();
 
-const PORT = 8000;
+const PORT = process.env.PORT||800;
+
+connectdb()
 
 app.listen(PORT,()=>{
-    console.log(`server is runing on port ${PORT}`)
-})
+    console.log(`server is running on Port ${PORT}`)
+}
+)
